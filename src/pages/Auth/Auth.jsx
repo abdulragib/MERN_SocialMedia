@@ -140,7 +140,7 @@ const Auth = () => {
                 : "Don't have an account? Sign Up"}
             </span>
           </div>
-          <button className="button infoButton" type="submit">
+          <button className="button infoButton" type="submit" disabled={loading}>
             {loading? "Loading...":isSignUp ? "Signup" : "Log In"}
           </button>
         </form>
