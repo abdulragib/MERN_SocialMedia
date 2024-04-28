@@ -5,6 +5,7 @@ import Share from "../../img/share.png";
 import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
 import { useSelector } from "react-redux";
+import { likePost } from "../../api/PostRequest";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -12,7 +13,9 @@ const Post = ({ data }) => {
   const [likes, setLikes] = useState(data.likes.length);
 
   const handleLike = () => {
+    likePost(data._id,user._id)
     setLiked((prev) => !prev);
+    liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   };
 
   return (
