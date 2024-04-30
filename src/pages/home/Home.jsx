@@ -6,7 +6,7 @@ import RightSide from '../../components/RightSide/RightSide'
 const Home = () => {
   return (
     <div className="Home">
-        <ProfileSide/>
+        <ProfileSide />
         <PostSide/>
         <RightSide />
     </div>
